@@ -1,0 +1,13 @@
+﻿@model aspmvc.Models.PlanetModel;
+
+<h1>@Model.Name</h1>
+<div class="card w-100">
+    <img src="~/planet/@(Model.NameEn).jpg" alt="planet"/>
+    <div class="card-body">
+        <div class="card-text">
+            @Model.Description
+        </div>
+
+        <a class="card-link" asp-action="Index">Back</a>
+    </div>
+</div>

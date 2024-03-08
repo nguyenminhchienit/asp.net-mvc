@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton(typeof(ProductService), typeof(ProductService));
+builder.Services.AddSingleton<PlanetService>();
 
 var app = builder.Build();
 
@@ -32,5 +33,11 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
+
+app.MapAreaControllerRoute(
+    name: "AdminProductManage",
+    areaName: "ProductManage",
+    pattern: "ProductManage/{controller}/{action=Index}/{id?}"
+    );
 
 app.Run();
