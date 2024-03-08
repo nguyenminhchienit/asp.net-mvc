@@ -1,0 +1,11 @@
+﻿@inject aspmvc.Services.PlanetService planetService;
+
+<h1>Các hành tinh hệ mặt trời</h1>
+
+<div class="list-group">
+    @foreach (var planet in planetService)
+    {
+        <a class="list-group-item" asp-action="@planet.NameEn">@planet.Name - @planet.NameEn</a>
+    }
+</div>
+
