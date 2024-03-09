@@ -1,14 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    var message = TempData["StatusMessage"] as string;
+    //var message = TempData["StatusMessage"] as string;
 }
 
-@if (!string.IsNullOrEmpty(message))
+@* @if (!string.IsNullOrEmpty(message))
 {
     <div class="alert alert-warning">
         @message
     </div>
-}
+} *@
+
+
+<partial name="_AlertMessagePartial" />
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

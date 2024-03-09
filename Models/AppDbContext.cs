@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using aspmvc.Models.Contact;
+using Microsoft.EntityFrameworkCore;
 
 namespace aspmvc.Models
 {
@@ -26,6 +27,8 @@ namespace aspmvc.Models
                 }
             }*/
         }
+
+        public DbSet<ContactModel> Contacts { get; set; }
 
     }
 }
