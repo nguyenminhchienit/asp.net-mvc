@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using aspmvc.Models;
 
@@ -10,9 +11,11 @@ using aspmvc.Models;
 namespace aspmvc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240309030722_Contact")]
+    partial class Contact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,6 @@ namespace aspmvc.Migrations
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasMaxLength(500)
                         .HasColumnType("nvarchar");
 
                     b.Property<string>("Name")
