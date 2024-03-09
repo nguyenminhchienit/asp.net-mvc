@@ -1,9 +1,17 @@
+using aspmvc.Models;
 using aspmvc.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppDbContext> (options =>
+{
+    string connectString = builder.Configuration.GetConnectionString("appmvc");
+    options.UseSqlServer(connectString);
+});
 
 builder.Services.AddSingleton(typeof(ProductService), typeof(ProductService));
 builder.Services.AddSingleton<PlanetService>();
